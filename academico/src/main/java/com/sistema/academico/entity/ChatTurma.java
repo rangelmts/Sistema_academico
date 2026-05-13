@@ -11,25 +11,24 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "mat_matricula_turma", schema = "academico")
-public class MatriculaTurma {
+@Table(name = "cht_chat_turma", schema = "academico")
+public class ChatTurma {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "mat_nr_id")
+    @Column(name = "cht_nr_id")
     private Long id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "alu_nr_id", nullable = false)
-    private Aluno aluno;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tur_nr_id", nullable = false)
     private Turma turma;
 
-    @Column(name = "mat_dt_matricula", nullable = false)
-    private LocalDateTime dataMatricula = LocalDateTime.now();
+    @Column(name = "cht_tx_titulo", length = 150)
+    private String titulo;
 
-    @Column(name = "mat_tx_status", nullable = false, columnDefinition = "bpchar(1)")
+    @Column(name = "cht_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
+
+    @Column(name = "cht_dt_criacao", nullable = false)
+    private LocalDateTime dataCriacao = LocalDateTime.now();
 }
