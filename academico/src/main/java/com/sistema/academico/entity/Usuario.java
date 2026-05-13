@@ -6,6 +6,10 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
+/**
+ * Entidade que representa um usuário no sistema acadêmico.
+ * Gerencia as credenciais e o perfil de acesso (ALUNO, PROFESSOR, COORDENADOR).
+ */
 @Getter
 @Setter
 @NoArgsConstructor
