@@ -1,9 +1,14 @@
-package com.sistema.academico.model;
+package com.sistema.academico.entity;
 
+import com.sistema.academico.enums.StatusRegistro;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "cur_curso", schema = "academico")
 public class Curso {
@@ -17,8 +22,8 @@ public class Curso {
     private String nome;
 
     @Column(name = "cur_tx_codigo_suap", length = 100)
-    private String codigoSuap; // Aqui guardaremos o código da sua "integração fake" [cite: 58]
+    private String codigoSuap;
 
     @Column(name = "cur_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = "A";
+    private String status = StatusRegistro.ATIVO.getCodigo();
 }

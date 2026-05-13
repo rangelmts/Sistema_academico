@@ -1,7 +1,7 @@
 package com.sistema.academico.service;
 
 import com.sistema.academico.dto.UsuarioResponseDto;
-import com.sistema.academico.model.Usuario;
+import com.sistema.academico.entity.Usuario;
 import com.sistema.academico.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

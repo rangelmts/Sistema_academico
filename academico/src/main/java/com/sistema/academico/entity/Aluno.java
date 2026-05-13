@@ -1,9 +1,14 @@
-package com.sistema.academico.model;
+package com.sistema.academico.entity;
 
+import com.sistema.academico.enums.StatusRegistro;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "alu_aluno", schema = "academico")
 public class Aluno {
@@ -13,13 +18,11 @@ public class Aluno {
     @Column(name = "alu_nr_id")
     private Long id;
 
-    // Relacionamento 1 para 1: Um aluno é exatamente UM usuário
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usu_nr_id", nullable = false)
     private Usuario usuario;
 
-    // Relacionamento Muitos para 1: Vários alunos podem estar em UM curso
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cur_nr_id")
     private Curso curso;
 
@@ -27,5 +30,5 @@ public class Aluno {
     private String matricula;
 
     @Column(name = "alu_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = "A";
+    private String status = StatusRegistro.ATIVO.getCodigo();
 }

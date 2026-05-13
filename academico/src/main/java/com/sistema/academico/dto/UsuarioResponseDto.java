@@ -1,6 +1,6 @@
 package com.sistema.academico.dto;
 
-import com.sistema.academico.model.Usuario;
+import com.sistema.academico.entity.Usuario;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +17,6 @@ public class UsuarioResponseDto {
         this.id = usuario.getId();
         this.nome = usuario.getNome();
         this.email = usuario.getEmail();
-        this.perfil = usuario.getPerfil();
+        this.perfil = usuario.getPerfil().name();
     }
 }

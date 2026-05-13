@@ -1,9 +1,14 @@
-package com.sistema.academico.model;
+package com.sistema.academico.entity;
 
+import com.sistema.academico.enums.StatusRegistro;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "dis_disciplina", schema = "academico")
 public class Disciplina {
@@ -23,5 +28,5 @@ public class Disciplina {
     private Integer cargaHoraria;
 
     @Column(name = "dis_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = "A";
+    private String status = StatusRegistro.ATIVO.getCodigo();
 }

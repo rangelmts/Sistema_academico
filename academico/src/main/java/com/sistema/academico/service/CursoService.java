@@ -1,6 +1,6 @@
 package com.sistema.academico.service;
 
-import com.sistema.academico.model.Curso;
+import com.sistema.academico.entity.Curso;
 import com.sistema.academico.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

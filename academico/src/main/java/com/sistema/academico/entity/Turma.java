@@ -1,9 +1,14 @@
-package com.sistema.academico.model;
+package com.sistema.academico.entity;
 
+import com.sistema.academico.enums.StatusRegistro;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "tur_turma", schema = "academico")
 public class Turma {
@@ -13,15 +18,15 @@ public class Turma {
     @Column(name = "tur_nr_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dis_nr_id", nullable = false)
     private Disciplina disciplina;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pro_nr_id", nullable = false)
     private Professor professor;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pel_nr_id", nullable = false)
     private PeriodoLetivo periodoLetivo;
 
@@ -32,5 +37,5 @@ public class Turma {
     private String codigoSuap;
 
     @Column(name = "tur_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = "A";
+    private String status = StatusRegistro.ATIVO.getCodigo();
 }

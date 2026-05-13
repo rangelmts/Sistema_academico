@@ -1,9 +1,14 @@
-package com.sistema.academico.model;
+package com.sistema.academico.entity;
 
+import com.sistema.academico.enums.StatusRegistro;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "pel_periodo_letivo", schema = "academico")
 public class PeriodoLetivo {
@@ -23,5 +28,5 @@ public class PeriodoLetivo {
     private String descricao;
 
     @Column(name = "pel_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = "A";
+    private String status = StatusRegistro.ATIVO.getCodigo();
 }

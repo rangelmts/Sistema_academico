@@ -1,9 +1,14 @@
-package com.sistema.academico.model;
+package com.sistema.academico.entity;
 
+import com.sistema.academico.enums.StatusRegistro;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "pro_professor", schema = "academico")
 public class Professor {
@@ -13,7 +18,7 @@ public class Professor {
     @Column(name = "pro_nr_id")
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usu_nr_id", nullable = false)
     private Usuario usuario;
 
@@ -21,5 +26,5 @@ public class Professor {
     private String matriculaSiape;
 
     @Column(name = "pro_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = "A";
+    private String status = StatusRegistro.ATIVO.getCodigo();
 }

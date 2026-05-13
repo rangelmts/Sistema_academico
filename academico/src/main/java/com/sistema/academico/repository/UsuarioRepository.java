@@ -1,6 +1,6 @@
 package com.sistema.academico.repository;
 
-import com.sistema.academico.model.Usuario;
+import com.sistema.academico.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
