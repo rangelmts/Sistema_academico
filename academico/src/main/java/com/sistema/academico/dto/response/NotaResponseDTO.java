@@ -3,15 +3,17 @@ package com.sistema.academico.dto.response;
 import lombok.Builder;
 import lombok.Data;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Builder
-public class AvaliacaoResponseDTO {
+public class NotaResponseDTO {
     private Long id;
     private Long matriculaTurmaId;
-    private BigDecimal nota;
     private String descricao;
-    private LocalDateTime dataLancamento;
+    private BigDecimal valor;
+    private BigDecimal peso;
+    private LocalDate dataAvaliacao;
+    private String codigoSuap;
     private String status;
 }

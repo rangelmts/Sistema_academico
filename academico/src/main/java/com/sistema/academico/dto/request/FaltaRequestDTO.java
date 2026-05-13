@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class FrequenciaRequestDTO {
+public class FaltaRequestDTO {
 
     @NotNull(message = "A matrícula é obrigatória")
     private Long matriculaTurmaId;
@@ -13,8 +13,9 @@ public class FrequenciaRequestDTO {
     @NotNull(message = "A data da aula é obrigatória")
     private LocalDate dataAula;
 
-    @NotNull(message = "O status de presença é obrigatório")
-    private Boolean presente;
+    private Integer quantidade;
 
-    private String observacao;
+    private String justificativa;
+
+    private String codigoSuap;
 }

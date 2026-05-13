@@ -6,9 +6,10 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-public class MensagemResponseDTO {
+public class ChatMensagemResponseDTO {
     private Long id;
-    private String autorNome;
-    private String conteudo;
+    private String usuarioNome;
+    private String mensagem;
     private LocalDateTime dataEnvio;
+    private String status;
 }

@@ -6,11 +6,12 @@ import java.time.LocalDate;
 
 @Data
 @Builder
-public class FrequenciaResponseDTO {
+public class FaltaResponseDTO {
     private Long id;
     private Long matriculaTurmaId;
     private LocalDate dataAula;
-    private Boolean presente;
-    private String observacao;
+    private Integer quantidade;
+    private String justificativa;
+    private String codigoSuap;
     private String status;
 }
