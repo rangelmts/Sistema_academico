@@ -1,21 +1,23 @@
 package com.sistema.academico.controller;
 
-import com.sistema.academico.model.Usuario;
+import com.sistema.academico.dto.UsuarioResponseDto;
 import com.sistema.academico.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController // Define que esta classe responde a requisições WEB
-@RequestMapping("/usuarios") // O endereço base será http://localhost:8080/usuarios
+@RestController
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping // Quando alguém acessar a URL, este método será chamado
-    public List<Usuario> listar() {
+    @GetMapping
+    public List<UsuarioResponseDto> listar() {
         return usuarioService.listarTodos();
     }
 }
