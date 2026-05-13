@@ -1,9 +1,9 @@
 package com.sistema.academico.repository;
 
-import com.sistema.academico.entity.Frequencia;
+import com.sistema.academico.entity.Nota;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FrequenciaRepository extends JpaRepository<Frequencia, Long> {
+public interface NotaRepository extends JpaRepository<Nota, Long> {
 }

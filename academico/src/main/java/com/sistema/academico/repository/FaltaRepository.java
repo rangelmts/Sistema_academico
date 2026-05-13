@@ -1,9 +1,9 @@
 package com.sistema.academico.repository;
 
-import com.sistema.academico.entity.Avaliacao;
+import com.sistema.academico.entity.Falta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AvaliacaoRepository extends JpaRepository<Avaliacao, Long> {
+public interface FaltaRepository extends JpaRepository<Falta, Long> {
 }
