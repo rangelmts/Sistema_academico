@@ -27,6 +27,7 @@ public class NotaServiceImpl implements NotaService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<NotaResponseDTO> listarPorMatricula(Long matriculaId) {
         // Para simplificar, retornando todos. Em um cenário real, filtraria por matriculaId
         return notaRepository.findAll().stream()

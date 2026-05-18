@@ -21,6 +21,7 @@ public class TurmaServiceImpl implements TurmaService {
     private final TurmaRepository turmaRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public List<TurmaResponseDTO> listarTodos() {
         return turmaRepository.findAll().stream()
                 .map(TurmaMapper::toDTO)
@@ -35,6 +36,7 @@ public class TurmaServiceImpl implements TurmaService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public TurmaResponseDTO buscarPorId(Long id) {
         return turmaRepository.findById(id)
                 .map(TurmaMapper::toDTO)

@@ -21,6 +21,7 @@ public class AlunoServiceImpl implements AlunoService {
     private final AlunoRepository alunoRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public List<AlunoResponseDTO> listarTodos() {
         return alunoRepository.findAll().stream()
                 .map(AlunoMapper::toDTO)
@@ -35,6 +36,7 @@ public class AlunoServiceImpl implements AlunoService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public AlunoResponseDTO buscarPorId(Long id) {
         return alunoRepository.findById(id)
                 .map(AlunoMapper::toDTO)

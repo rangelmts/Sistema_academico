@@ -25,6 +25,7 @@ public class Professor {
     @Column(name = "pro_tx_matricula_siape", length = 50)
     private String matriculaSiape;
 
+    @Builder.Default
     @Column(name = "pro_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 }

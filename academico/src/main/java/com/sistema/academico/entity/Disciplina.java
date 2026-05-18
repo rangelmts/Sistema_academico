@@ -27,6 +27,7 @@ public class Disciplina {
     @Column(name = "dis_nr_carga_horaria")
     private Integer cargaHoraria;
 
+    @Builder.Default
     @Column(name = "dis_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 }

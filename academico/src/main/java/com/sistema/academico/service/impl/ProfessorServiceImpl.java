@@ -21,6 +21,7 @@ public class ProfessorServiceImpl implements ProfessorService {
     private final ProfessorRepository professorRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public List<ProfessorResponseDTO> listarTodos() {
         return professorRepository.findAll().stream()
                 .map(ProfessorMapper::toDTO)
@@ -35,6 +36,7 @@ public class ProfessorServiceImpl implements ProfessorService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public ProfessorResponseDTO buscarPorId(Long id) {
         return professorRepository.findById(id)
                 .map(ProfessorMapper::toDTO)

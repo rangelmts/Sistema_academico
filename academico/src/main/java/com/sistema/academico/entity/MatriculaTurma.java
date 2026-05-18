@@ -3,6 +3,8 @@ package com.sistema.academico.entity;
 import com.sistema.academico.enums.StatusRegistro;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -27,9 +29,11 @@ public class MatriculaTurma {
     @JoinColumn(name = "tur_nr_id", nullable = false)
     private Turma turma;
 
+    @Builder.Default
     @Column(name = "mat_dt_matricula", nullable = false)
-    private LocalDateTime dataMatricula = LocalDateTime.now();
+    private LocalDate dataMatricula = LocalDate.now();
 
+    @Builder.Default
     @Column(name = "mat_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 }

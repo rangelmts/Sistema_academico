@@ -29,7 +29,6 @@ public class NotaMapper {
                 .peso(entity.getPeso())
                 .dataAvaliacao(entity.getDataAvaliacao())
                 .codigoSuap(entity.getCodigoSuap())
-                .status(entity.getStatus())
                 .build();
     }
 }

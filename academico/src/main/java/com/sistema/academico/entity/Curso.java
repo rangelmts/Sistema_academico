@@ -24,6 +24,7 @@ public class Curso {
     @Column(name = "cur_tx_codigo_suap", length = 100)
     private String codigoSuap;
 
+    @Builder.Default
     @Column(name = "cur_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 }

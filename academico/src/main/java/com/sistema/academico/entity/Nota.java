@@ -39,6 +39,4 @@ public class Nota {
     @Column(name = "not_tx_codigo_suap", length = 100)
     private String codigoSuap;
 
-    @Column(name = "not_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = StatusRegistro.ATIVO.getCodigo();
 }

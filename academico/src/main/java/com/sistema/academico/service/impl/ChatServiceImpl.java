@@ -27,6 +27,7 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<ChatMensagemResponseDTO> listarPorChat(Long chatId) {
         return chatMensagemRepository.findByChatIdOrderByDataEnvioAsc(chatId).stream()
                 .map(ChatMensagemMapper::toDTO)

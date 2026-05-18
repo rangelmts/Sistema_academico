@@ -29,6 +29,7 @@ public class Aluno {
     @Column(name = "alu_tx_matricula", nullable = false, length = 50)
     private String matricula;
 
+    @Builder.Default
     @Column(name = "alu_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 }

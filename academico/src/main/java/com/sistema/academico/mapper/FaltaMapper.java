@@ -27,7 +27,6 @@ public class FaltaMapper {
                 .quantidade(entity.getQuantidade())
                 .justificativa(entity.getJustificativa())
                 .codigoSuap(entity.getCodigoSuap())
-                .status(entity.getStatus())
                 .build();
     }
 }

@@ -27,6 +27,7 @@ public class PeriodoLetivo {
     @Column(name = "pel_tx_descricao", nullable = false, length = 50)
     private String descricao;
 
+    @Builder.Default
     @Column(name = "pel_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 }

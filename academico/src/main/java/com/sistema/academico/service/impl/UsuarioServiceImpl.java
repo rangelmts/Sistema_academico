@@ -21,6 +21,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     private final UsuarioRepository usuarioRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public List<UsuarioResponseDTO> listarTodos() {
         return usuarioRepository.findAll().stream()
                 .map(UsuarioMapper::toDTO)
@@ -35,6 +36,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public UsuarioResponseDTO buscarPorId(Long id) {
         return usuarioRepository.findById(id)
                 .map(UsuarioMapper::toDTO)

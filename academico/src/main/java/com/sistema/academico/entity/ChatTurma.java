@@ -26,9 +26,11 @@ public class ChatTurma {
     @Column(name = "cht_tx_titulo", length = 150)
     private String titulo;
 
+    @Builder.Default
     @Column(name = "cht_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 
+    @Builder.Default
     @Column(name = "cht_dt_criacao", nullable = false)
     private LocalDateTime dataCriacao = LocalDateTime.now();
 }

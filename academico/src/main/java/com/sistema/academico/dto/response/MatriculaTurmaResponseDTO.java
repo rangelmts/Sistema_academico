@@ -2,6 +2,8 @@ package com.sistema.academico.dto.response;
 
 import lombok.Builder;
 import lombok.Data;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -10,6 +12,6 @@ public class MatriculaTurmaResponseDTO {
     private Long id;
     private AlunoResponseDTO aluno;
     private TurmaResponseDTO turma;
-    private LocalDateTime dataMatricula;
+    private LocalDate dataMatricula;
     private String status;
 }

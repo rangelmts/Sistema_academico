@@ -30,9 +30,11 @@ public class ChatMensagem {
     @Column(name = "msg_tx_mensagem", nullable = false, columnDefinition = "TEXT")
     private String mensagem;
 
+    @Builder.Default
     @Column(name = "msg_dt_envio", nullable = false)
     private LocalDateTime dataEnvio = LocalDateTime.now();
 
+    @Builder.Default
     @Column(name = "msg_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 }

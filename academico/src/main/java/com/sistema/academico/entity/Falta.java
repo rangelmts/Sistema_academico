@@ -26,6 +26,7 @@ public class Falta {
     @Column(name = "fal_dt_aula", nullable = false)
     private LocalDate dataAula;
 
+    @Builder.Default
     @Column(name = "fal_nr_quantidade", nullable = false)
     private Integer quantidade = 1;
 
@@ -35,6 +36,4 @@ public class Falta {
     @Column(name = "fal_tx_codigo_suap", length = 100)
     private String codigoSuap;
 
-    @Column(name = "fal_tx_status", nullable = false, columnDefinition = "bpchar(1)")
-    private String status = StatusRegistro.ATIVO.getCodigo();
 }

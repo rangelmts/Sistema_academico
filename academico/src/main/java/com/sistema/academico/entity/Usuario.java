@@ -40,9 +40,11 @@ public class Usuario {
     @Column(name = "usu_tx_perfil", nullable = false)
     private PerfilUsuario perfil;
 
+    @Builder.Default
     @Column(name = "usu_tx_status", nullable = false, columnDefinition = "bpchar(1)")
     private String status = StatusRegistro.ATIVO.getCodigo();
 
+    @Builder.Default
     @Column(name = "usu_dt_cadastro")
     private LocalDateTime dataCadastro = LocalDateTime.now();
 }
